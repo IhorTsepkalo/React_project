@@ -33,6 +33,7 @@ let [users, setUsers] = useState(usersList);
     let [counter, setCounter] = useState(0);
     const increment = () => setCounter(++counter);
     const decrement = () => setCounter(--counter);
+    const reset = () => setCounter(0);
 
     return (
         <div>
@@ -44,6 +45,9 @@ let [users, setUsers] = useState(usersList);
 
                 <div>
                     <button onClick={decrement}>decrement</button>
+                </div>
+                <div>
+                    <button onClick={reset}>reset</button>
                 </div>
             </div>
             <div>
