@@ -1,0 +1,8 @@
+.wrap {
+    display: flex;
+}
+
+.userDet {
+    height: fit-content;
+    background: aquamarine;
+}

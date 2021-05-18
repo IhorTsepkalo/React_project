@@ -1,20 +1,26 @@
-import './App.css';
-import CharactersComponents from "./components/characters/characters.components";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
+import Users from "./components/Users/Users";
 
-function App() {
+
+export default function App() {
     return (
-        <div className={'main'}>
-            <CharactersComponents
-                description={'bart'}
-                image={'https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png'}/>
-            <CharactersComponents
-                description={'lisa'}
-                image={'https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png'}/>
-            <CharactersComponents
-                description={'homer'}
-                image={'http://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'}/>
-        </div>
-    );
-}
+        <Router>
+            <div>
+                <div><Link to={'users'}> Users </Link></div>
+                <h1></h1>
+                <div><Link to={'posts'}> Posts </Link></div>
 
-export default App;
+                <Switch>
+                    <Route path={'/users'} render={() => <Users/>}/>
+                    <Route path={'/posts'} render={() => <h1>Posts</h1>}/>
+                </Switch>
+            </div>
+        </Router>
+    )
+}
