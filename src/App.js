@@ -6,6 +6,7 @@ import {
     withRouter
 } from "react-router-dom";
 import Users from "./components/Users/Users";
+import Posts from "./components/Posts/Posts/Posts";
 
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
 
                 <Switch>
                     <Route path={'/users'} render={() => <Users/>}/>
-                    <Route path={'/posts'} render={() => <h1>Posts</h1>}/>
+                    <Route path={'/posts'} render={() => <Posts/>}/>
                 </Switch>
             </div>
         </Router>
