@@ -1,0 +1,13 @@
+.mainUserslist {
+    display: flex;
+    padding: 5px;
+    background: white;
+}
+
+
+.button {
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+
+}

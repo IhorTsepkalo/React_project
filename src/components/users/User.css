@@ -1,0 +1,16 @@
+.wrap {
+    display: flex;
+}
+.usersBox {
+    background: silver;
+    padding: 10px;
+    width: fit-content;
+
+}
+.singleUserBox {
+    border: 10px solid silver;
+    padding: 10px;
+    width: fit-content;
+    margin-left: 3px;
+    background: white;
+}
