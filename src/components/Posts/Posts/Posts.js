@@ -25,7 +25,7 @@ const search = (id) => {
             <div>
                 {
                     details && <div>
-                        <div>{details.username} </div>
+                        <div><h3>{details.username}</h3> Address: {details.address.city} - {details.address.street}  </div>
                         <div>{<img src={'https://picsum.photos/150/150'} alt=""/>}</div>
                     </div>
                 }
