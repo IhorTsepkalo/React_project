@@ -1,15 +1,18 @@
-export default function User({item, chooseUser}) {
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
+
+export default function User({item, url}) {
     return (
         <div>
 
             <div>
-                {item.username}
+                {item.username} - <Link to={url + '/' + item.id}> user {item.id} details</Link>
             </div>
-                        <img src={'https://picsum.photos/200/300'} alt=""/>
-            <div>
-                <button onClick={()=> chooseUser(item.id)}>Details</button>
-            </div>
-            <h1></h1>
         </div>
     )
 }

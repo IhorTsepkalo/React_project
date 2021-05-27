@@ -1,35 +1,28 @@
 import React, {useEffect, useState} from 'react';
-import {getUsers} from "../../../services/api";
+import {getPosts} from "../../../services/api";
 import Post from "./Post/Post";
 import './Posts.css'
+import PostDetails from "./Post/PostDetails/PostDetails";
 
-function Posts() {
+function Posts({url}) {
     let [posts, setPosts] = useState([])
-    let [details, setDetails] = useState(null)
+
 
     useEffect(() => {
-        getUsers()
+        getPosts()
             .then(value => setPosts([...value.data]))
     }, [])
-const search = (id) => {
-        setDetails(posts.find(value => value.id === id))
-}
+
 
     return (
         <div className={'wrap'}>
             <div>
                 {
-                    posts.map(value => <Post key={value.id} item={value} searsh={search}/>)
+                    posts.map(value => <Post key={value.id} item={value} url={url}/>)
+
                 }
             </div>
-            <div>
-                {
-                    details && <div>
-                        <div><h3>{details.username}</h3> Address: {details.address.city} - {details.address.street}  </div>
-                        <div>{<img src={'https://picsum.photos/150/150'} alt=""/>}</div>
-                    </div>
-                }
-            </div>
+
 
         </div>
     );

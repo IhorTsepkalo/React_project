@@ -1,10 +1,10 @@
+import {Link} from "react-router-dom";
 
-
-function Post ({item, searsh}) {
+function Post ({item, url}) {
     return (
         <div>
             <div>
-                {item.id} - {item.name}  <button onClick={()=>searsh(item.id)}>Details</button>
+                {item.id} - {item.title}-<Link to={url + '/' + item.id}> details </Link>
             </div>
         </div>
     )

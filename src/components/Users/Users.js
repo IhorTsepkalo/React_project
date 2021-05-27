@@ -2,9 +2,9 @@ import {useEffect, useState} from "react";
 import User from "./User/User";
 import './Users.css'
 
-export default function Users() {
+export default function Users( {match:{url}}) {
+
     let [users, setUsers] = useState([])
-    let [choosenUser, setChoosenUser] = useState(null)
 
 
     useEffect(() => {
@@ -15,22 +15,16 @@ export default function Users() {
             })
     }, [])
 
-    const chooseUser = (id) => {
-        setChoosenUser(users.find(value => value.id === id))
-    }
+
 
     return (
         <div className={'wrap'}>
             <div>
                 {
-                    users.map(value => <User key={value.id} item={value} chooseUser={chooseUser}/>)
+                    users.map(value => <User key={value.id} item={value} url={url}/>)
                 }
             </div>
-            <div className={'userDet'}>
-                {
-                    choosenUser && <div> {choosenUser.id} - {choosenUser.email}</div>
-                }
-            </div>
+
         </div>
     )
 }
